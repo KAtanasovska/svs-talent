@@ -7,10 +7,10 @@ public class WordCounter {
 
 	public static void main(String[] args) {
 	
-			HashMap hm = new HashMap();
+			HashMap hm = new HashMap<String, Integer>();
 		
 		   try {
-	            FileReader file = new FileReader("C:\\Users\\code\\Documents\\workspace-sts-3.7.3.RELEASE\\WordCounter\\src\\Temp.txt");
+	            FileReader file = new FileReader("C:\\Users\\Kristinata\\Documents\\GitHub\\svs-talent\\WordCounter\\src\\Temp.txt");
 	            BufferedReader buff = new BufferedReader(file);
 	            boolean eof = false;
 	            while (!eof) {
@@ -25,7 +25,7 @@ public class WordCounter {
 	                	   if(hm.containsKey(key)){
 	                		   //value +1
 	                		   int value = (int)hm.get(key);
-	                		   hm.put(key, value);
+	                		   hm.put(key, value+1);
 	                	   }
 	                	   else{
 	                		   hm.put(key, 1);
@@ -36,12 +36,14 @@ public class WordCounter {
 	                }
 	            }
 	            buff.close();
+	            
 
 	        } catch (IOException e) {
 	            System.out.println("Error — " + e.toString());
 
 	        }
-		
+		   System.out.println(hm.entrySet());
+
 	}
 
 }
