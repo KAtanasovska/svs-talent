@@ -15,7 +15,7 @@ public class TestCamera implements ImageCapturingDevice {
 
 	}
 
-	public void turnOffTestCamera() {
+	public void turnOff() {
 		scanner.close();
 		System.out.println("The scanning is off");
 	}
